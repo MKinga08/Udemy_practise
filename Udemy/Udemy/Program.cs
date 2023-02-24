@@ -16,6 +16,8 @@ namespace Udemy
         public static void Main(string[] args)
         {
             LoopExamples();
+
+            Ternary();
         }
 
 
@@ -36,6 +38,13 @@ namespace Udemy
             }
 
         }
-
+        public static void Ternary()
+        {
+            Console.WriteLine("---------ternary operators---------");
+            int x = 2;
+            int value = 0;
+            bool isGreater = x > value ? true : false;
+            Console.WriteLine(isGreater);
+        }
     }
 }
