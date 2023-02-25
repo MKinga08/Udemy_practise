@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.Tracing;
 using System.Linq.Expressions;
+using System.Net.WebSockets;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Udemy
@@ -18,8 +19,11 @@ namespace Udemy
             LoopExamples();
 
             Ternary();
-        }
 
+            OperatorOverloading();
+
+        }
+        
 
         public static void LoopExamples()
         {
@@ -45,6 +49,17 @@ namespace Udemy
             int value = 0;
             bool isGreater = x > value ? true : false;
             Console.WriteLine(isGreater);
+
+        }
+        public static void OperatorOverloading()
+        {
+            Console.WriteLine("---------operator overloading---------");
+            Box box1 = new(2, 2, 2);
+            Box box2 = new(2, 2, 2);
+            Box box3 = box1 + box2;
+            Console.WriteLine("Length: " + box3.GetLength());
+            Console.WriteLine("Width: " + box3.GetWidth());
+            Console.WriteLine("Height: " + box3.GetHeight());
         }
     }
 }
