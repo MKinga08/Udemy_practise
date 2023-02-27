@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Net.WebSockets;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 
 namespace Udemy
 {
@@ -22,8 +23,11 @@ namespace Udemy
 
             OperatorOverloading();
 
+            StringBuilder();
+
+            BooleanFlagTechnique();
         }
-        
+
 
         public static void LoopExamples()
         {
@@ -49,7 +53,6 @@ namespace Udemy
             int value = 0;
             bool isGreater = x > value ? true : false;
             Console.WriteLine(isGreater);
-
         }
         public static void OperatorOverloading()
         {
@@ -61,5 +64,41 @@ namespace Udemy
             Console.WriteLine("Width: " + box3.GetWidth());
             Console.WriteLine("Height: " + box3.GetHeight());
         }
+        public static void StringBuilder()
+        {
+            Console.WriteLine("---------StringBuilder---------");
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("hello world");
+            Console.WriteLine(stringBuilder);
+            for (int i = 0; i < 4; i++)
+            {
+                stringBuilder.Append(" nice to see you");
+            }
+            Console.WriteLine(stringBuilder);
+            string a = stringBuilder.ToString();
+            Console.WriteLine(a);
+            Console.WriteLine("---------why not working?---------");
+            string s = "The quick brown fox jumps over the  lazy dog";
+            string[] sArray = s.Split(' ');
+            Console.WriteLine(sArray);
+        }
+        public static void BooleanFlagTechnique()
+        {
+            Console.WriteLine("---------Boolean flag technique---------");
+            bool example = false; 
+            List<int> intList = new List<int>() {1, 2, 3};
+            foreach(int i in intList)
+            {
+                if (i == 3)
+                {
+                    example = true;
+                }
+            }
+            if(example)
+            {
+                Console.WriteLine("You found 3!");
+            }
+        }
+        
     }
 }
