@@ -85,20 +85,20 @@ namespace Udemy
         public static void BooleanFlagTechnique()
         {
             Console.WriteLine("---------Boolean flag technique---------");
-            bool example = false; 
-            List<int> intList = new List<int>() {1, 2, 3};
-            foreach(int i in intList)
+            bool example = false;
+            List<int> intList = new List<int>() { 1, 2, 3 };
+            foreach (int i in intList)
             {
                 if (i == 3)
                 {
                     example = true;
                 }
             }
-            if(example)
+            if (example)
             {
                 Console.WriteLine("You found 3!");
             }
-        }
-        
+        } 
+
     }
 }
