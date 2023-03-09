@@ -26,6 +26,8 @@ namespace Udemy
             StringBuilder();
 
             BooleanFlagTechnique();
+
+            UserInput();
         }
 
 
@@ -78,9 +80,9 @@ namespace Udemy
             string a = stringBuilder.ToString();
             Console.WriteLine(a);
             Console.WriteLine("---------why not working?---------");
-            string s = "The quick brown fox jumps over the  lazy dog";
+            string s = "The quick brown fox jumps over the lazy dog";
             string[] sArray = s.Split(' ');
-            Console.WriteLine(sArray);
+            sArray.ToList().ForEach(i => Console.WriteLine(i.ToString()));
         }
         public static void BooleanFlagTechnique()
         {
@@ -99,6 +101,36 @@ namespace Udemy
                 Console.WriteLine("You found 3!");
             }
         } 
+        public static void UserInput()
+        {
+            Console.WriteLine("---------Background colour changer---------");
+            Console.WriteLine("g = green; r = red; b = blue; w = white");
+            int x = Console.Read();
+            char userinput = Convert.ToChar(x);
+            while(userinput != 'z')
+            {
+                switch (userinput)
+                {
+                    case 'g':
+                        Console.BackgroundColor = ConsoleColor.Green; 
+                        break;
+                    case 'r':
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        break;
+                    case 'b':
+                        Console.BackgroundColor = ConsoleColor.Blue;
+                        break;
+                    case 'w':
+                        Console.BackgroundColor = ConsoleColor.White;
+                        break;
+                    default:
+                        break;
+                }
+                Console.Clear();
+                x = Console.Read();
+                userinput = Convert.ToChar(x);
+            }
+        }
 
     }
 }
