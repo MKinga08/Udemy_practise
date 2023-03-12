@@ -28,6 +28,8 @@ namespace Udemy
             BooleanFlagTechnique();
 
             UserInput();
+
+            WorkingWithFiles();
         }
 
 
@@ -104,10 +106,10 @@ namespace Udemy
         public static void UserInput()
         {
             Console.WriteLine("---------Background colour changer---------");
-            Console.WriteLine("g = green; r = red; b = blue; w = white");
+            Console.WriteLine("g = green; r = red; b = blue; w = white; q = quit") ;
             int x = Console.Read();
             char userinput = Convert.ToChar(x);
-            while(userinput != 'z')
+            while(userinput != 'q')
             {
                 switch (userinput)
                 {
@@ -130,6 +132,19 @@ namespace Udemy
                 x = Console.Read();
                 userinput = Convert.ToChar(x);
             }
+        }
+        public static void WorkingWithFiles()
+        {
+            Console.WriteLine("---------Working with files---------");
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Example.txt";
+            if (!File.Exists(path))
+            {
+                File.Create(path);
+            }
+            FileStream fs = File.Open(path, FileMode.Append);
+            byte[] info = new UTF8Encoding(true).GetBytes("Hello world");
+            fs.Write(info, 0, info.Length);
+            fs.Close();
         }
 
     }
