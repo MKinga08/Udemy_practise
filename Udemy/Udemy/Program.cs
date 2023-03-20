@@ -32,6 +32,10 @@ namespace Udemy
             WorkingWithFiles();
 
             Lambda();
+
+            FuncAndExtensionMethod();
+
+           
         }
 
 
@@ -163,10 +167,14 @@ namespace Udemy
             List<Player> lists = new List<Player> { a, b, c, d, e};
 
             var ActualPlayer = lists.Where(x => x.name == "Kinga").First();
+
+
+
             Console.WriteLine(ActualPlayer.name);
 
             var PlayersSymbol = lists.Where(x => x.symbol == 'X').ToList();
             Console.WriteLine(PlayersSymbol[1].symbol);
+
             Console.WriteLine("---------Custom writeline---------");
             WriteLine(ActualPlayer);
         }
@@ -175,6 +183,14 @@ namespace Udemy
             Console.WriteLine(player.symbol);
             Console.WriteLine(player.name);
         }
+        public static void FuncAndExtensionMethod()
+        {
+            Console.WriteLine("---------FuncAndExtensionMethod---------");
+            Func<int, int, int> multiply = (x, y) => { return x * y; };
+            Console.WriteLine(multiply(2, 3));
+
+        }
+
     }
 
 }
