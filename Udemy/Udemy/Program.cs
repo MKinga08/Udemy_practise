@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Udemy
 {
-    class Program
+    class Program 
     {
         private string name = "Robert";
         public string Name
@@ -35,7 +35,9 @@ namespace Udemy
 
             FuncAndExtensionMethod();
 
-           
+            InterfaceImplementing();
+
+
         }
 
 
@@ -190,7 +192,14 @@ namespace Udemy
             Console.WriteLine(multiply(2, 3));
 
         }
-
+        public static void InterfaceImplementing()
+        {
+            Console.WriteLine("---------InterfaceImplementing---------");
+            InterfaceExample ex1 = new InterfaceExample();
+            Console.WriteLine(ex1.Example2());
+            Console.WriteLine(ex1.Example3("Kinga", "mégegystring"));
+            Console.WriteLine(ex1.SecondExample());
+        }
     }
 
 }
