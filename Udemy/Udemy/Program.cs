@@ -30,6 +30,8 @@ namespace Udemy
             UserInput();
 
             WorkingWithFiles();
+
+            Lambda();
         }
 
 
@@ -70,7 +72,7 @@ namespace Udemy
         }
         public static void StringBuilder()
         {
-            Console.WriteLine("---------StringBuilder---------");
+            Console.WriteLine("\n---------StringBuilder---------");
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("hello world");
             Console.WriteLine(stringBuilder);
@@ -81,14 +83,13 @@ namespace Udemy
             Console.WriteLine(stringBuilder);
             string a = stringBuilder.ToString();
             Console.WriteLine(a);
-            Console.WriteLine("---------why not working?---------");
             string s = "The quick brown fox jumps over the lazy dog";
             string[] sArray = s.Split(' ');
             sArray.ToList().ForEach(i => Console.WriteLine(i.ToString()));
         }
         public static void BooleanFlagTechnique()
         {
-            Console.WriteLine("---------Boolean flag technique---------");
+            Console.WriteLine("\n---------Boolean flag technique---------");
             bool example = false;
             List<int> intList = new List<int>() { 1, 2, 3 };
             foreach (int i in intList)
@@ -105,7 +106,7 @@ namespace Udemy
         } 
         public static void UserInput()
         {
-            Console.WriteLine("---------Background colour changer---------");
+            Console.WriteLine("\n---------Background colour changer---------");
             Console.WriteLine("g = green; r = red; b = blue; w = white; q = quit") ;
             int x = Console.Read();
             char userinput = Convert.ToChar(x);
@@ -135,7 +136,7 @@ namespace Udemy
         }
         public static void WorkingWithFiles()
         {
-            Console.WriteLine("---------Working with files---------");
+            Console.WriteLine("\n---------Working with files---------");
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Example.txt";
             if (!File.Exists(path))
             {
@@ -145,7 +146,35 @@ namespace Udemy
             byte[] info = new UTF8Encoding(true).GetBytes("Hello world");
             fs.Write(info, 0, info.Length);
             fs.Close();
+            Console.WriteLine("Method is working\n");
         }
+        public static void Lambda()
+        {
+            Console.WriteLine("---------Lambda Expressions---------");
+            Action debug = () => Console.WriteLine("hello World");
+            debug();
 
+            var a = new Player("Pista", 'X');
+            var b = new Player("Kinga", 'P'); 
+            var c = new Player("Adam", 'K'); 
+            var d = new Player("Lalika", 'X');
+            var e = new Player("Kriszti", 'O');
+
+            List<Player> lists = new List<Player> { a, b, c, d, e};
+
+            var ActualPlayer = lists.Where(x => x.name == "Kinga").First();
+            Console.WriteLine(ActualPlayer.name);
+
+            var PlayersSymbol = lists.Where(x => x.symbol == 'X').ToList();
+            Console.WriteLine(PlayersSymbol[1].symbol);
+            Console.WriteLine("---------Custom writeline---------");
+            WriteLine(ActualPlayer);
+        }
+        public static void WriteLine(Player player)
+        {
+            Console.WriteLine(player.symbol);
+            Console.WriteLine(player.name);
+        }
     }
+
 }
